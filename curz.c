@@ -1,30 +1,27 @@
 #include <stdio.h>
-// questão 12:
+// questão 14 : media de salarios
 
 int main(){
-    double MI, MA, altura, altVelhos = 0;
-    int i, idade;
-    int idBaixo = 0, quantBaixo = 0, quantVelhos = 0;
+    int quantFunc, i, salario, totalSAL = 0, mediaSAL, maiorSal = 10000, menorSal = 0;
+    
+    printf("Quantidade de funcionarios: ");
+    scanf("%d", &quantFunc);
+    
+    for(i = 1; i <= quantFunc; i++){
+        printf("Qual salario de cada um: ", i);// colocar i dentro do printf para direcionar o valor de cada func.
+        scanf("%d", &salario); 
 
-    for(i = 1; i <= 45; i++){
-        printf("Sua idade e altura: ");
-        scanf("%d %lf", &idade, &altura);
-
-        if(altura < 1.7){
-            idBaixo += idade;
-            quantBaixo ++;
-        }
-
-        if(idade > 20){
-            altVelhos += altura;
-            quantVelhos ++;
-        }
+        totalSAL += salario;
+        if(menorSal > salario)
+            menorSal = salario;
+        
+        if(maiorSal > salario)
+            maiorSal = salario;
     }
-
-    MI = idBaixo / quantBaixo;
-    MA = altVelhos / quantVelhos;
-
-        printf("Media de Idade: %.2lf\n Media de Altura: %.2lf\n", MI, MA);
+    
+    mediaSAL = totalSAL/ quantFunc;
+    
+    printf("Media Salarial: R$ %d,00\n Maior Salario: R$ %d,00\n Menor Salario: R$ %d,00\n", mediaSAL, maiorSal, menorSal);
 
     return 0;
 }
