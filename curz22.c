@@ -5,9 +5,9 @@ int main(){
    int ano = 0;
    
     while(chico >= ze){
-        chico = chico + 0.02;
+        chico = chico + 0.02; // vai ficar somando
         ze = ze + 0.03;
-        ano++; // 
+        ano++; // vai ficar CONTANDO quantas vezes foram somadas os 2 ATÉ parar na regra dentro do while
     }
 
     printf("Sera nescessario %d anos\n", ano);
